@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %} {% block body %}
+<table class="table table-striped table-bordered ">
+    <tr>
+        <th>ID</th>
+        <th>LIBELLE</th>
+    </tr>
+    {% for listers in lister %}
+    <tr>
+        <td>{{listers.id}}</td>
+        <td>{{listers.libelle}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

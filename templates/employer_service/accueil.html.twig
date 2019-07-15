@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %} {% block body %}
+{# {% form_theme form 'bootstrap_4_layout.html.twig' %} #}
+<h3>AJOUTER UN EMPLOYER</h3>
+
+{#  premiere methode #}
+{# {{form(formp)}} {% endblock %} #}
+{#  fin #}
+
+{# deuxieme methode  #}
+
+{{form_start(formp)}}
+{{form_row(formp.matricule ,{'attr':{'placeholder': "Matricule de l'Employer" }})}}
+{{form_row(formp.nom ,{'attr':{'placeholder':"Nom de l'Employer" }})}}
+{{form_row(formp.dateNaiss ,{'attr':{'placeholder': " Date de naissance" }})}}
+{{form_row(formp.salaire  ,{'attr':{'placeholder': "Salaire de l'Employer" }})}}
+{{form_row(formp.idservice ,{'attr':{'placeholder': "Service de l'Employer" }})}}
+<button type="submit" class="btn btn-success btn-lg">
+ {% if editMode %}
+ Update
+ {% else %}
+Ajout Employer
+{% endif %}
+</button>
+{{form_end(formp)}}
+{% include "footer.html.twig" %}
+{% endblock %}
+
+{#fin 2  #}
